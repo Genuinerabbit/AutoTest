@@ -18,10 +18,16 @@ def test_login(page,set_data):
     set_data("cookies",page.context.cookies())
     assert page.get_by_role("heading", name="Welcome to Damn Vulnerable Web Application!").count() == 1
 
+@allure.feature('DVWA')
+@allure.story('使用')
+@allure.title('上传文件')
 def test_upload(page,get_data):
     page.context.add_cookies(get_data("cookies"))
     uploadpagetest(page)
 
+@allure.feature('DVWA')
+@allure.story('登录')
+@allure.title('登出')
 def test_logout(page,get_data):
     page.context.add_cookies(get_data("cookies"))
     page.goto("http://127.0.0.1/dvwa/index.php")
