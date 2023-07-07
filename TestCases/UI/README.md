@@ -91,6 +91,21 @@ test.py:主体类 以test为开头的函数为测试用例
 	test_logout 测试登出
 ```
 
+### 测试代码生成
+
+```python
+	在venv/Scripts目录下执行playwright codegen，跳出代码生成器和浏览器
+	选择生成python代码
+	在浏览器中操作，代码生成器会自动记录所有操作事件
+	生成的代码直接copy到pytest用例中，增加部分等待事件确保页面能渲染成功
+	增加最后的断言
+	upload用例中，增加了最终页面存在succesfully字样
+	logout用例中，判断退出后和登录前的login截图几乎相等
+	
+```
+
+
+
 ## 执行
 
 1、右键test.py，选择Run test，运行后出报告
